@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Base styles for the entire application */
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem; /* Adjust based on header height */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Add Tailwind dark mode class variants */
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+/* Common layout elements */
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24;
+}
+
+/* Button components using @apply for Tailwind */
+@layer components {
+  .btn-primary {
+    @apply inline-block px-6 py-3 rounded-md font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-700 hover:from-primary-600 hover:to-primary-800 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all;
+  }
+
+  .btn-secondary {
+    @apply inline-block px-6 py-3 rounded-md font-semibold text-primary-600 dark:text-primary-400 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all;
+  }
+}
