@@ -6,6 +6,7 @@ import WhyChooseUs from './components/layout/WhyChooseUs';
 import Testimonials from './components/layout/Testimonials';
 import ContactForm from './components/layout/ContactForm';
 import Footer from './components/layout/Footer';
+import ChatWidget from './components/chat/ChatWidget';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <ContactForm />
       </main>
       <Footer />
+      <ChatWidget />
     </div>
   );
 }

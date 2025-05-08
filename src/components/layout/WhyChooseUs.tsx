@@ -35,11 +35,11 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="whychooseus" className="bg-white dark:bg-gray-900">
+    <section id="whychooseus" className="bg-white dark:bg-gray-900 py-12 sm:py-16">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <motion.h2 
-            className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white"
+            className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -48,7 +48,7 @@ const WhyChooseUs = () => {
             Why Choose SoftSell
           </motion.h2>
           <motion.p 
-            className="mt-4 max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-300"
+            className="mt-2 max-w-2xl mx-auto text-lg sm:text-xl text-gray-600 dark:text-gray-300 px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -58,21 +58,21 @@ const WhyChooseUs = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={feature.id}
-              className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-md"
+              className="bg-gray-50 dark:bg-gray-800 rounded-lg p-5 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="rounded-md bg-primary-100 dark:bg-primary-900 p-2 w-12 h-12 mb-5 flex items-center justify-center">
+              <div className="rounded-md bg-primary-100 dark:bg-primary-900 p-2 w-12 h-12 mb-4 flex items-center justify-center">
                 <feature.icon className="h-6 w-6 text-primary-600 dark:text-primary-400" aria-hidden="true" />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white">{feature.name}</h3>
-              <p className="mt-2 text-base text-gray-600 dark:text-gray-300">{feature.description}</p>
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">{feature.name}</h3>
+              <p className="mt-1 text-base text-gray-600 dark:text-gray-300 flex-grow">{feature.description}</p>
             </motion.div>
           ))}
         </div>

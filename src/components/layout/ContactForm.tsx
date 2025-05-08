@@ -43,7 +43,7 @@ const ContactForm = () => {
   return (
     <section id="contact" className="bg-white dark:bg-gray-900 py-12 sm:py-16">
       <div className="section-container px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-8">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-start">
           <motion.div 
             className="lg:col-span-5"
             initial={{ opacity: 0, x: -20 }}
@@ -131,6 +131,7 @@ const ContactForm = () => {
                         className={`py-2 sm:py-3 px-3 sm:px-4 block w-full shadow-sm rounded-md ${
                           errors.name ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-primary-500 focus:border-primary-500'
                         } dark:bg-gray-700 dark:border-gray-600 dark:text-white`}
+                        placeholder="Your full name"
                       />
                       {errors.name && (
                         <p className="mt-1 text-sm text-red-600 dark:text-red-500">{errors.name.message}</p>
@@ -154,6 +155,7 @@ const ContactForm = () => {
                         type="email"
                         id="email"
                         autoComplete="email"
+                        placeholder="your.email@example.com"
                         className={`py-2 sm:py-3 px-3 sm:px-4 block w-full shadow-sm rounded-md ${
                           errors.email ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-primary-500 focus:border-primary-500'
                         } dark:bg-gray-700 dark:border-gray-600 dark:text-white`}
@@ -164,7 +166,7 @@ const ContactForm = () => {
                     </div>
                   </div>
                   
-                  <div>
+                  <div className="col-span-1 sm:col-span-1">
                     <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                       Company
                     </label>
@@ -174,6 +176,7 @@ const ContactForm = () => {
                         type="text"
                         id="company"
                         autoComplete="organization"
+                        placeholder="Your company name"
                         className={`py-2 sm:py-3 px-3 sm:px-4 block w-full shadow-sm rounded-md ${
                           errors.company ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-primary-500 focus:border-primary-500'
                         } dark:bg-gray-700 dark:border-gray-600 dark:text-white`}
@@ -184,7 +187,7 @@ const ContactForm = () => {
                     </div>
                   </div>
                   
-                  <div>
+                  <div className="col-span-1 sm:col-span-1">
                     <label htmlFor="licenseType" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                       License Type
                     </label>
@@ -216,6 +219,7 @@ const ContactForm = () => {
                         {...register('message', { required: 'Message is required' })}
                         id="message"
                         rows={4}
+                        placeholder="Tell us about your software licenses"
                         className={`py-2 sm:py-3 px-3 sm:px-4 block w-full shadow-sm rounded-md ${
                           errors.message ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-primary-500 focus:border-primary-500'
                         } dark:bg-gray-700 dark:border-gray-600 dark:text-white`}

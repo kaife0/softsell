@@ -26,12 +26,14 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
 }
 
 /* Add Tailwind dark mode class variants */
@@ -41,16 +43,31 @@ body {
 
 /* Common layout elements */
 .section-container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24;
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24;
 }
 
 /* Button components using @apply for Tailwind */
 @layer components {
   .btn-primary {
-    @apply inline-block px-6 py-3 rounded-md font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-700 hover:from-primary-600 hover:to-primary-800 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all;
+    @apply inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-md font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-700 hover:from-primary-600 hover:to-primary-800 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all;
   }
 
   .btn-secondary {
-    @apply inline-block px-6 py-3 rounded-md font-semibold text-primary-600 dark:text-primary-400 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all;
+    @apply inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-md font-semibold text-primary-600 dark:text-primary-400 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all;
+  }
+  
+  /* Responsive text utilities */
+  .text-responsive {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+  
+  /* Card and container utilities */
+  .responsive-card {
+    @apply p-4 sm:p-6 md:p-8 rounded-lg shadow-md;
+  }
+  
+  /* Responsive gap and margin utilities */
+  .responsive-gap {
+    @apply gap-4 sm:gap-6 md:gap-8;
   }
 }
